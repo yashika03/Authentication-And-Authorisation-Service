@@ -10,7 +10,7 @@ This is the Authentication and Authorisation service for the Airline Management 
   "development": {
     "username": "root",
     "password": <your sql password>,
-    "database": "Flights_Search_Database_Dev",
+    "database": "Auth_Database_Dev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
