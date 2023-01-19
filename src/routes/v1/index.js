@@ -3,7 +3,7 @@ const router = express.Router();
 
 const UserController = require('../../controllers/user-controller');
 
-const {AuthRequestValidators} = require('../../middlewares/index');
+const {AuthRequestValidators, } = require('../../middlewares/index');
 router.post('/signup',
             AuthRequestValidators.validateUserAuth,
             UserController.create);
@@ -16,4 +16,8 @@ router.post('/signin',
 router.get('/isAuthenticated', 
             UserController.isAuthenticated);
 
+
+router.get('/isAdmin',
+            AuthRequestValidators.validateIsAdminRequest,
+            UserController.isAdmin);
 module.exports=router;
