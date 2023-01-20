@@ -42,6 +42,10 @@ class UserService{
             const JWTtoken = await this.createToken({email: user.email, id: user.id});
             return JWTtoken;
         } catch (error) {
+            if(error.name == 'AttributeNotFound')
+            {
+                throw error;
+            }
             console.log("Something went wrong in the Service Layer");
             throw error;
         }
